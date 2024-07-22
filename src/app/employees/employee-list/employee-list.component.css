@@ -115,4 +115,5 @@ li {
   touch-action: none;
   padding: 16px;
   border-radius: 0;
+  cursor: pointer;
 }
