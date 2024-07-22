@@ -68,6 +68,8 @@ export class EmployeeAddComponent {
         ...employee, // Spread form values onto new employee object
       };
       this.employeeService.addEmployee(newEmployee);
+    } else {
+      this.employeeForm.markAllAsTouched();
     }
   }
 

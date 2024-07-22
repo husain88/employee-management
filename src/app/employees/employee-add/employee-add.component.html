@@ -2,7 +2,7 @@
   <div class="head fixed-top">
     <h1 class="heading">Add Employee</h1>
   </div>
-  <div class="main">
+  <div class="main bg-white">
     <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -151,7 +151,7 @@
       </div>
     </form>
   </div>
-  <div class="fixed-bottom d-flex justify-content-end p-3 bg-grey footer">
+  <div class="fixed-bottom d-flex justify-content-end p-3 bg-white footer">
     <button routerLink="/employees" class="btn cancel-btn">Cancel</button>
     <button (click)="onSubmit()" class="btn save-btn">Save</button>
   </div>

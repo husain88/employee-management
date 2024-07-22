@@ -109,6 +109,8 @@ export class EmployeeEditComponent implements OnInit {
         id: this.employeeId,
       };
       this.employeeService.updateEmployee(newEmployee);
+    } else {
+      this.employeeForm.markAllAsTouched();
     }
   }
 
