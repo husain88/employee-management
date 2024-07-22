@@ -37,16 +37,6 @@ export class EmployeeListComponent implements OnInit {
   }
 
   onDeleteItem(event:any, item: any) {
-    debugger
     this.employeeService.deleteEmployee(item.id);
-  }
-
-  onItemClick(event:any, employee: any) {
-    console.log(event?.target?.tagName, event.target.classList.contains('d-delete-button'))
-    if (event?.target?.tagName === 'BUTTON' && event.target.classList.contains('d-delete-button')) {
-      this.onDeleteItem(event, employee);
-    } else {
-      this.onEmployeeClick(employee.id);
-    }
   }
 }

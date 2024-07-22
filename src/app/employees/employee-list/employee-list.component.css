@@ -79,10 +79,9 @@ li {
   background-color: #ff3b30;
   color: #fff;
   text-align: center;
-  padding: 16px;
-  font-size: 16px;
+  font-size: 24px;
   cursor: pointer;
-  transform: translateX(120%);
+  transform: scale(1, 1.4) translateX(120%);
   will-change: transform;
 }
 
@@ -90,11 +89,12 @@ li {
     background-color: #ff3b30;
     color: #fff;
     text-align: center;
-    padding: 16px;
+    padding: 8px;
     font-size: 16px;
     cursor: pointer;
     touch-action: none;
     pointer-events: auto;
+    border-radius: 5px;
   }
 
   .c1, .c2 {

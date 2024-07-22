@@ -19,7 +19,7 @@
         (click)="onEmployeeClick(employee.id)"
         (swipeLeft)="onDeleteItem($event, employee)"
         class="list-group-item">
-        <div class="d-flex justify-content-between c1">
+        <div class="d-flex justify-content-between c1 align-items-start">
           <div class="c2">
             <h6 class="name">{{ employee.name }}</h6>
             <p class="role">{{ employee.role }}</p>
@@ -28,12 +28,12 @@
             </p>
           </div>
           <button
-            class="delete-button border-0 d-block d-md-none"
+            class="delete-button border-0 d-block d-lg-none"
             (click)="onDeleteItem($event, employee)">
             <i class="fa fa-trash"></i>
           </button>
           <button
-            class="d-delete-button border-0 d-none d-md-block"
+            class="d-delete-button border-0 d-none d-lg-block"
             (click)="$event.stopPropagation(); onDeleteItem($event, employee)">
             <i class="fa fa-trash"></i>
           </button>
@@ -60,12 +60,12 @@
             </p>
           </div>
           <button
-            class="delete-button border-0 d-block d-md-none"
+            class="delete-button border-0 d-block d-lg-none"
             (click)="onDeleteItem($event, employee)">
             <i class="fa fa-trash"></i>
           </button>
           <button
-            class="d-delete-button border-0 d-none d-md-block"
+            class="d-delete-button border-0 d-none d-lg-block"
             (click)="$event.stopPropagation(); onDeleteItem($event, employee)">
             <i class="fa fa-trash"></i>
           </button>
@@ -75,7 +75,7 @@
   </div>
   <div class="fixed-bottom d-flex justify-content-between p-3 bg-grey">
     <div>
-        <p class="swipe-text d-block d-md-none">swipe left to delete</p>
+        <p class="swipe-text d-block d-lg-none">swipe left to delete</p>
     </div>
     <button routerLink="/add" class="btn add-btn">
       <i class="fa fa-plus"></i>
