@@ -26,7 +26,6 @@
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "ng-bootstrap": "^1.6.3",
-    "ng-swipe-to-delete": "^1.0.3",
     "ngx-bootstrap": "^11.0.2",
     "ngx-indexed-db": "^16.0.0",
     "ngx-toastr": "^17.0.2",
