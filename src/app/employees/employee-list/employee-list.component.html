@@ -1,0 +1,82 @@
+<div class="layout">
+  <div class="head fixed-top">
+    <h1 class="heading">Employee List</h1>
+  </div>
+
+  <div class="main">
+    <div
+      *ngIf="!previousEmployees().length && !currentEmployees().length"
+      class="img-wrapper">
+      <img src="./assets/images/no-data.png" class="img-fluid" alt="No Data" />
+    </div>
+    <div class="sub-head" *ngIf="currentEmployees().length">
+      <h2 class="sub-heading">Current Employees</h2>
+    </div>
+    <ul *ngIf="currentEmployees().length" class="list-group">
+      <li
+        swipeLeft
+        *ngFor="let employee of currentEmployees()"
+        (click)="onEmployeeClick(employee.id)"
+        (swipeLeft)="onDeleteItem($event, employee)"
+        class="list-group-item">
+        <div class="d-flex justify-content-between c1">
+          <div class="c2">
+            <h6 class="name">{{ employee.name }}</h6>
+            <p class="role">{{ employee.role }}</p>
+            <p class="date">
+              From {{ employee.startDate | date : "dd MMM, yyyy" }}
+            </p>
+          </div>
+          <button
+            class="delete-button border-0 d-block d-md-none"
+            (click)="onDeleteItem($event, employee)">
+            <i class="fa fa-trash"></i>
+          </button>
+          <button
+            class="d-delete-button border-0 d-none d-md-block"
+            (click)="onDeleteItem($event, employee)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </li>
+    </ul>
+    <div class="sub-head" *ngIf="previousEmployees().length">
+      <h2 class="sub-heading">Previous Employees</h2>
+    </div>
+    <ul *ngIf="previousEmployees().length" class="list-group">
+      <li
+        swipeLeft
+        *ngFor="let employee of previousEmployees()"
+        (click)="onEmployeeClick(employee.id)"
+        (swipeLeft)="onDeleteItem($event, employee)"
+        class="list-group-item">
+        <div class="c1 d-flex justify-content-between">
+          <div class="c2">
+            <h6 class="name">{{ employee.name }}</h6>
+            <p class="role">{{ employee.role }}</p>
+            <p class="date">
+              {{ employee.startDate | date : "dd MMM, yyyy" }} -
+              {{ employee.endDate | date : "dd MMM, yyyy" }}
+            </p>
+          </div>
+          <button
+            class="delete-button border-0 d-block d-md-none"
+            (click)="onDeleteItem($event, employee)">
+            <i class="fa fa-trash"></i>
+          </button>
+          <button
+            class="d-delete-button border-0 d-none d-md-block"
+            (click)="onDeleteItem($event, employee)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="fixed-bottom d-flex justify-content-between p-3 bg-grey">
+    <p class="swipe-text">swipe left to delete</p>
+    <button routerLink="/add" class="btn add-btn">
+      <i class="fa fa-plus"></i>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+.sub-heading {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #1da1f2;
+  padding: 16px 16px !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+.sub-head {
+  background-color: #f2f2f2;
+}
+
+.add-btn {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  background-color: #1da1f2;
+  font-size: 24px;
+  border-radius: 8px;
+}
+
+.add-btn i {
+  font-weight: 400;
+}
+
+.swipe-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: #949c9e;
+}
+
+.bg-grey {
+  background-color: #f2f2f2;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #323238;
+  margin-bottom: 6px;
+}
+
+.role {
+  font-size: 14px;
+  font-weight: 400;
+  color: #949c9e;
+  margin-bottom: 6px;
+}
+
+.date {
+  color: #949c9e;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+.img-wrapper {
+  height: 100%;
+  width: 260px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-wrapper img {
+  margin: 0 auto;
+}
+li {
+  position: relative;
+}
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  background-color: #ff3b30;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transform: translateX(120%);
+  will-change: transform;
+}
+
+.d-delete-button {
+    background-color: #ff3b30;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    touch-action: none;
+    pointer-events: auto;
+  }
+
+  .c1, .c2 {
+    touch-action: none;
+    pointer-events: auto;
+  }
+
+.swipe-left {
+  transform: translateX(-100%);
+}
+
+.list-group {
+  touch-action: none;
+  touch-action: pan-y;
+}
+
+.list-group-item {
+  touch-action: none;
+  padding: 16px;
+  border-radius: 0;
+}

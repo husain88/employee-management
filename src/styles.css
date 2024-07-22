@@ -1,1 +1,180 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.heading {
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  color: #ffffff;
+  padding: 0;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+.head {
+  background-color: #1da1f2;
+  padding: 16px 16px;
+}
+
+.main {
+  margin-top: 50px;
+  height: calc(100vh - 136px);
+  overflow-y: auto;
+  touch-action: pan-y;
+  overflow-x: hidden;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh; /* Ensure container fills viewport height */
+  flex-direction: column;
+  height: 100%;
+}
+
+.input-group {
+  height: 40px;
+  flex-wrap: nowrap;
+}
+
+.list-group-item > * {
+  pointer-events: none;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.cdk-global-overlay-wrapper {
+  align-items: end !important;
+}
+
+.cdk-overlay-pane {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: unset !important;
+}
+
+.mdc-dialog__container {
+  align-items: end !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  height: unset !important;
+  border-radius: 16px 16px 0 0 !important;
+}
+
+.mat-mdc-list-item:not(.mat-mdc-list-item-interactive),
+.mat-mdc-list-option:not(.mat-mdc-list-item-interactive) {
+  text-align: center;
+}
+.mat-datepicker-content-container {
+  flex-direction: column-reverse !important;
+}
+
+.mat-datepicker-actions {
+  display: grid !important;
+  justify-content: flex-end;
+  align-items: start;
+  padding: 0 8px 8px 8px;
+  grid-template-columns: 1fr 1fr !important;
+}
+
+ngb-datepicker {
+  position: absolute;
+  background-color: #fff;
+
+  .ngb-dp-header {
+    background-color: #fff;
+    color: #000
+  }
+
+  select {
+    background-color: #fff;
+    color: #000;
+    border: 0;
+  }
+
+  .btn-link {
+    color: #1da1f2;
+  }
+  .ngb-dp-navigation-chevron {
+    height: 8px;
+    width: 8px;
+  }
+
+  .bg-primary {
+    border: 1px solid #000;
+    background-color: #1da1f2 !important;
+    border-radius: 20px;
+  }
+
+  .btn-light:hover {
+    border: 1px solid #1da1f2;
+    border-radius: 20px;
+    color: #1da1f2;
+  }
+}
+
+.input-group-prepend .btn,
+.input-group-append .btn {
+  border-right: none;
+  color: #1da1f2;
+  border-color: #e5e5e5;
+}
+
+.fa-arrow-right {
+  color: #1da1f2;
+}
+
+.toast-container {
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+.toast-container .ngx-toastr {
+  width: 100% !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  background-image: none !important;
+  padding: 10px 16px !important;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.mat-mdc-list-item, .mat-mdc-list-option {
+  border-bottom: 1px solid #efefef !important;
+}
+
+:host ::part/ngb-dp-header {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #fff !important;
+}
+
+.btn-outline-secondary:focus, .btn-outline-secondary.focus {
+  box-shadow: none;
+}

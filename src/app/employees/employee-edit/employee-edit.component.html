@@ -1,0 +1,152 @@
+<div class="layout">
+  <div class="head fixed-top">
+    <h1 class="heading">Edit Employee</h1>
+  </div>
+  <div class="main">
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">
+            <i class="fa fa-user"></i>
+          </span>
+        </div>
+        <input
+          type="text"
+          formControlName="name"
+          required
+          class="form-control"
+          placeholder="Employee name"
+          aria-label="Employee Name"
+          aria-describedby="basic-addon1"/>
+      </div>
+      <div
+        class="mt-n2 mb-2"
+        *ngIf="
+          employeeForm.get('name')?.hasError('required') &&
+          employeeForm.get('name')?.touched">
+        <small class="text-danger">Employee name is required</small>
+      </div>
+      <div class="input-group mb-3 d-none d-md-flex">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">
+            <i class="fa fa-suitcase"></i>
+          </label>
+        </div>
+        <div class="select_box">
+          <select
+            class="custom-select"
+            formControlName="role"
+            placeholder="Select role">
+            <option value="" selected disabled>Select role</option>
+            <option value="Product Designer">Product Designer</option>
+            <option value="Flutter Developer">Flutter Developer</option>
+            <option value="QA Tester">QA Tester</option>
+            <option value="Product Owner">Product Owner</option>
+          </select>
+        </div>
+      </div>
+      <div
+        class="input-group mb-3 two-sides-icon-group mobile-select d-flex d-md-none">
+        <div class="input-group-prepend" (click)="openRoleSelect($event)">
+          <span class="input-group-text"><i class="fa fa-suitcase"></i></span>
+        </div>
+        <input
+          type="text"
+          placeholder="Select role"
+          readonly
+          formControlName="role"
+          (click)="openRoleSelect($event)"
+          class="form-control"
+          aria-label="Amount (to the nearest dollar)"/>
+        <div class="input-group-append" (click)="openRoleSelect($event)">
+          <span class="input-group-text"><i class="fa fa-sort-down"></i></span>
+        </div>
+      </div>
+      <div
+        class="mt-n2 mb-2"
+        *ngIf="
+          employeeForm.get('role')?.hasError('required') &&
+          employeeForm.get('role')?.touched">
+        <small class="text-danger">Role is required</small>
+      </div>
+      <div class="d-flex">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <button
+              class="btn btn-outline-secondary calendar fa fa-calendar"
+              (click)="start.toggle()"
+              type="button"></button>
+          </div>
+          <input
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dp"
+            formControlName="startDate"
+            ngbDatepicker
+            [firstDayOfWeek]="0"
+            [footerTemplate]="footerStartTemplate"
+            #start="ngbDatepicker"/>
+          <div
+            class="mt-n2 mb-2"
+            *ngIf="
+              employeeForm.get('startDate')?.hasError('required') &&
+              employeeForm.get('startDate')?.touched">
+            <small class="text-danger">Start date is required</small>
+          </div>
+        </div>
+        <div class="d-flex align-items-center mx-3">
+          <i class="fa fa-arrow-right"> </i>
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <button
+              class="btn btn-outline-secondary calendar fa fa-calendar"
+              (click)="end.toggle()"
+              type="button"></button>
+          </div>
+          <input
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dp"
+            formControlName="endDate"
+            ngbDatepicker
+            [firstDayOfWeek]="0"
+            [footerTemplate]="footerEndTemplate"
+            #end="ngbDatepicker"/>
+          <div
+            class="mt-n2 mb-2"
+            *ngIf="
+              employeeForm.get('endDate')?.hasError('required') &&
+              employeeForm.get('endDate')?.touched">
+            <small class="text-danger">End date is required</small>
+          </div>
+        </div>
+      </div>
+      <ng-template #footerStartTemplate>
+        <hr class="my-0" />
+        <button
+          class="btn btn-secondary btn-sm m-2 float-end"
+          (click)="start.close()">
+          Close
+        </button>
+      </ng-template>
+      <ng-template #footerEndTemplate>
+        <hr class="my-0" />
+        <button
+          class="btn btn-secondary btn-sm m-2 float-end"
+          (click)="end.close()">
+          Close
+        </button>
+      </ng-template>
+      <div
+        class="error-message"
+        *ngIf="employeeForm.hasError('invalidDateRange')">
+        <small class="text-danger">Start date must be less than end date</small>
+      </div>
+    </form>
+  </div>
+  <div class="fixed-bottom d-flex justify-content-end p-3 bg-grey footer">
+    <button routerLink="/employees" class="btn cancel-btn">Cancel</button>
+    <button (click)="onSubmit()" class="btn save-btn">Save</button>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.cdk-global-overlay-wrapper {
+  align-items: end !important;
+}
+
+.cdk-overlay-pane {
+  width: 100% !important;
+  max-width: 100% !important;
+}
